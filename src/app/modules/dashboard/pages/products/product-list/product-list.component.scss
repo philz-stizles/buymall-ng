@@ -1,0 +1,246 @@
+.header {
+  margin-bottom: 40px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .page-info {
+      flex-grow: 1;
+
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+    }
+
+    .actions {
+      flex-shrink: 0;
+    }
+  }
+}
+
+.nav {
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(99, 115, 129);
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.table {
+  background-color: rgb(255, 255, 255);
+  color: rgb(33, 43, 54);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-image: none;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  border-radius: 16px;
+  z-index: 0;
+
+  .filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .main {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .main-header {
+      min-height: 56px;
+      max-height: 56px;
+      line-height: 56px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom: 0px;
+
+      & > div {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        & > div {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    border-color: rgba(145, 158, 171, 0.2) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: auto;
+    border-top: 1px dashed;
+
+    & > div {
+      overflow: auto;
+      color: rgb(33, 43, 54);
+      font-size: 0.875rem;
+      width: 100%;
+
+      &:last-child {
+        padding: 0px;
+      }
+
+      & > div {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-left: 16px;
+        min-height: 52px;
+        padding-right: 2px;
+        height: 64px;
+
+        @media (min-width: 600px) {
+          min-height: 52px;
+          padding-right: 2px;
+          padding-left: 24px;
+        }
+
+        p {
+          // display: block;
+          line-height: 1.57143;
+          font-size: 0.875rem;
+          font-weight: 400;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+.table-column__header {
+  font-size: 14px;
+  color: rgb(99, 115, 129);
+  background-color: rgb(244, 246, 248);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.name {
+  height: 56px;
+  width: 452px;
+  min-width: 452px;
+  max-width: 452px;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+
+  .product-details__img {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    margin-right: 16px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      object-fit: cover;
+      color: transparent;
+      text-indent: 10000px;
+    }
+  }
+
+  .product-details__content {
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .list-item {
+    display: flex;
+    width: fit-content;
+    break-inside: avoid;
+
+    .list-item__data {
+      min-height: auto;
+      max-height: none;
+      border-bottom: 1px dashed;
+      border-color: rgba(145, 158, 171, 0.2);
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+
+      &.details {
+        min-width: 452px;
+        max-width: 452px;
+      }
+
+      & > .created-at {
+        flex: 1 1 auto;
+        min-width: 0px;
+        margin: 0px;
+
+        span {
+          margin: 0px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: block;
+          line-height: 1.57143;
+          font-size: 0.875rem;
+          font-weight: 400;
+        }
+      }
+
+      &.text-center {
+        justify-content: center;
+      }
+
+      &.text-left {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

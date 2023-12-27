@@ -1,0 +1,20 @@
+.auth {
+  min-height: 100vh;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+  // background: transparent none repeat scroll 0 0;
+  // box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  // padding: 50px 42px;
+  // text-align: left;
+}

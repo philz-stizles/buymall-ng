@@ -1,0 +1,93 @@
+<header class="header">
+  <div class="container-2xl mx-auto px-4">
+    <div class="header-top border-b py-4">
+      <div class="flex-row justify-end">
+        <div></div>
+        <div class="flex-row justify-end gap-5">
+          <div class="flex-row gap-3">
+            <div class="underline">
+              <a href="order-tracking.html">Track Your Order</a>
+            </div>
+            <div class="same-style same-style-border language-wrap">
+              <a class="language-dropdown-active" href="#"
+                >English <i class="icon-arrow-down"></i
+              ></a>
+              <div class="language-dropdown" style="display: none">
+                <ul>
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">French</a></li>
+                  <li><a href="#">German</a></li>
+                  <li><a href="#">Spanish</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="same-style same-style-border currency-wrap">
+              <a class="currency-dropdown-active" href="#"
+                >US Dollar <i class="icon-arrow-down"></i
+              ></a>
+              <div class="currency-dropdown" style="display: none">
+                <ul>
+                  <li><a href="#">USD</a></li>
+                  <li><a href="#">EUR</a></li>
+                  <li><a href="#">Real</a></li>
+                  <li><a href="#">BDT</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex-row gap-1">
+            <button>
+              <lucide-angular
+                size="18"
+                name="facebook"
+                class="my-icon"
+              ></lucide-angular>
+            </button>
+            <button>
+              <lucide-angular
+                size="18"
+                name="instagram"
+                class="my-icon"
+              ></lucide-angular>
+            </button>
+            <button>
+              <lucide-angular
+                size="18"
+                name="youtube"
+                class="my-icon"
+              ></lucide-angular>
+            </button>
+            <button>
+              <lucide-angular
+                size="18"
+                name="twitter"
+                class="my-icon"
+              ></lucide-angular>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom flex-row gap-4">
+      <div class="logo text-md uppercase">Buymall</div>
+      <nav class="nav flex-row justify-center">
+        <ul class="flex-row gap-3 capitalize">
+          <li><a class="font-bold text-sm" routerLink="">Products</a></li>
+          <li><a class="font-bold text-sm" routerLink="">Categories</a></li>
+          <li><a class="font-bold text-sm" routerLink="">Shop</a></li>
+          <li><a class="font-bold text-sm" routerLink="">Blog</a></li>
+          <li><a class="font-bold text-sm" routerLink="">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="flex-row gap-2">
+        <span class="material-symbols-outlined"> favorite </span>
+        <span class="material-symbols-outlined"> local_mall </span>
+        <span class="material-symbols-outlined"> location_on </span>
+      </div>
+      <div class="auth">
+        <a class="text-sm underline uppercase" routerLink="/auth">login / register</a>
+        <!-- <app-button label="Login" (click)="onNavigateToLogin()"></app-button> -->
+      </div>
+    </div>
+  </div>
+</header>

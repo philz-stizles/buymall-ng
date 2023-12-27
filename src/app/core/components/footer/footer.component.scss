@@ -1,0 +1,35 @@
+footer {
+  color: #727272;
+  background-color: #000000;
+
+  .nav {
+    flex: 3;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    ul {
+      margin-bottom: 0px;
+      font-size: 1rem;
+
+      li {
+        font-weight: 450;
+        margin-bottom: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .info {
+    flex: 2;
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  }
+}

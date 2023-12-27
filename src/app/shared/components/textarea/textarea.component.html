@@ -1,0 +1,12 @@
+<div class="app-input">
+  <label for="{{ id }}">{{ label }}</label>
+  <textarea
+    rows="4"
+    id="{{ id }}"
+    aria-invalid="false"
+    [formControl]="formControl"
+  ></textarea>
+  <small *ngIf="!formControl.valid || formControl.touched"
+    >{{ label | titlecase }} is required</small
+  >
+</div>

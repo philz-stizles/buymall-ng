@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./sass/abstracts/functions";
+@import "./sass/abstracts/mixins";
+@import "./sass/abstracts/variables";
+
+@import "./sass/base/base";
+@import "./sass/base/utilities";
+@import "./sass/base/typography";
+
+@import "./sass/components/input";
+
+@import "./sass/layout/container";
+@import "./sass/layout/flex";
+@import "./sass/layout/grid";
+@import "./sass/layout/layout";

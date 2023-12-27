@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+* ::before,
+* ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Nunito, sans-serif !important;
+  // font-size: .8rem !important;
+  color: rgb(33, 43, 54);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+a,
+input,
+button,
+img,
+span {
+  transition: all 0.3s ease 0s;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  & * {
+    flex-grow: 1;
+  }
+}
+
+.item-center {
+  align-items: center;
+}
+
+// /*
+// --- 01 TYPOGRAPHY SYSTEM
+// - Font sizes (px)
+// 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+// --- 07 WHITESPACE
+// - Spacing system (px)
+// 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128

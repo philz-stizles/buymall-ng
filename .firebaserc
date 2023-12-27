@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "buyemall": {
+      "hosting": {
+        "buymall": [
+          "buymall-ng"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "buyemall"
+  }
+}

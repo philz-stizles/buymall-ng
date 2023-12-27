@@ -1,0 +1,34 @@
+<form #couponForm="ngForm" (ngSubmit)="onSubmit(couponForm)">
+  <div>
+    <label for="code">Code</label>
+    <input type="text" id="code" ngModel name="code" #code="ngModel" />
+    <small *ngIf="code.invalid && (code.touched || code.dirty)">
+      <small *ngIf="code.errors?.['required']">Coupon code is required</small>
+    </small>
+  </div>
+  <div>
+    <label for="discount">Discount</label>
+    <input
+      type="text"
+      id="discount"
+      ngModel
+      name="discount"
+      #discount="ngModel"
+    />
+    <small *ngIf="discount.invalid && (discount.touched || discount.dirty)"
+      ><small *ngIf="discount.errors?.['required']"
+        >Discount percentage is required</small
+      ></small
+    >
+  </div>
+  <div>
+    <label for="exiry">Expiry</label>
+    <input type="date" id="exiry" ngModel name="expiry" #expiry="ngModel" />
+    <small *ngIf="expiry.invalid && (expiry.touched || expiry.dirty)"
+      ><small *ngIf="expiry.errors?.['required']"
+        >Coupon expiry is required</small
+      ></small
+    >
+  </div>
+  <button [disabled]="couponForm.valid">Create</button>
+</form>
