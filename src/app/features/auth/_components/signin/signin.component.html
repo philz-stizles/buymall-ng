@@ -1,0 +1,71 @@
+<div class="mb-5">
+  <h4 class="mb-3 text-lg font-bold">Sign in to BuyMall</h4>
+  <div class="flex-row">
+    <p class="font-normal mb-0">New user?&nbsp;</p>
+    <a
+      class="font-semibold text-primary"
+      [routerLink]="['./']"
+      [fragment]="AuthMode.SignUp"
+      >Create an account</a
+    >
+  </div>
+</div>
+<form
+  class="flex-col gap-2"
+  #signinFrom="ngForm"
+  (ngSubmit)="onSubmit(signinFrom)"
+>
+  <div class="input">
+    <label htmlFor="email">Email</label>
+    <div class="mb-2">
+      <input
+        inputFocus
+        id="email"
+        type="text"
+        ngModel
+        name="email"
+        #email="ngModel"
+        required
+      />
+      <fieldset>
+        <legend><span>Email</span></legend>
+      </fieldset>
+    </div>
+    <small [hidden]="email.valid || email.pristine" class=""
+      >Email is required</small
+    >
+  </div>
+
+  <div class="input">
+    <label htmlFor="password">Password</label>
+    <div class="mb-2">
+      <input
+        inputFocus
+        id="password"
+        type="password"
+        ngModel
+        required
+        name="password"
+        #password="ngModel"
+      />
+      <fieldset>
+        <legend><span>Password</span></legend>
+      </fieldset>
+    </div>
+    <small [hidden]="password.valid || password.pristine"
+      >Password is required</small
+    >
+  </div>
+
+  <a class="underline text-right" routerLink="/auth/forgot-password"
+    >Forgot password?</a
+  >
+  <app-button
+    type="submit"
+    label="Sign in"
+    size="lg"
+    [disabled]="!signinFrom.form.valid"
+    [expanded]="true"
+    [isLoading]="isLoading"
+  ></app-button>
+</form>

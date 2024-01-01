@@ -1,0 +1,105 @@
+<section class="mb-6">
+  <a [routerLink]="['/dashboard/categories']" class="inline-flex item-center gap-1"
+    ><span class="text-sm material-symbols-outlined"> arrow_back_ios </span>
+    <span class="text-sm">Back to categories</span></a
+  >
+</section>
+<section class="mb-6">
+  <h2>{{ isEditMode() ? "Edit" : "Create" }} Category</h2>
+</section>
+<form
+  autocomplete="off"
+  [formGroup]="categoryForm"
+  class="flex-col"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="input">
+    <label for="name">Name</label>
+    <div>
+      <input inputFocus formControlName="name" type="text" id="name" />
+      <fieldset>
+        <legend><span>Name</span></legend>
+      </fieldset>
+    </div>
+    <small *ngIf="hasError('name')">Name is required</small>
+  </div>
+
+  <div class="input">
+    <label for="description">Description</label>
+    <div>
+      <input
+        inputFocus
+        formControlName="description"
+        type="text"
+        id="description"
+      />
+      <fieldset>
+        <legend><span>Description</span></legend>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="mb-6" formArrayName="subCategories">
+    <div class="flex-row justify-between">
+      <label for="subCategories">Sub Categories</label
+      ><app-icon-button
+        icon="add"
+        (onClick)="onAddSubCategory()"
+      ></app-icon-button>
+    </div>
+    <div
+      class="flex-row gap-4"
+      *ngFor="let subCategoryControl of subCategoryControls; let i = index"
+      [formGroupName]="i"
+    >
+      <div class="input">
+        <label for="name">Name</label>
+        <div>
+          <input inputFocus formControlName="name" type="text" id="name" />
+          <fieldset>
+            <legend><span>Name</span></legend>
+          </fieldset>
+        </div>
+        <small
+          *ngIf="
+            subCategoryControls[i].get('name')?.invalid &&
+            subCategoryControls[i].get('name')?.dirty
+          "
+          >Name is required</small
+        >
+        <!-- <small *ngIf="hasError('name')">Name is required</small> -->
+      </div>
+      <div class="input">
+        <label for="description">Description</label>
+        <div>
+          <input
+            inputFocus
+            formControlName="description"
+            type="text"
+            id="description"
+          />
+          <fieldset>
+            <legend><span>Description</span></legend>
+          </fieldset>
+        </div>
+      </div>
+      <app-icon-button
+        icon="delete"
+        (click)="onRemoveSubCategory(i)"
+      ></app-icon-button>
+    </div>
+  </div>
+
+  <div class="flex-row justify-start gap-4 mb-6">
+    <input formControlName="isPublished" type="checkbox" id="isPublished" />
+    <label for="isPublished">Published </label>
+  </div>
+
+  <app-button
+    size="lg"
+    type="submit"
+    [expanded]="true"
+    [disabled]="categoryForm.invalid || categoryForm.pristine"
+    [label]="isEditMode() ? 'Edit' : 'Save'"
+  ></app-button>
+</form>

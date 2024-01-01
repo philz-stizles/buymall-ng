@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../models/user.model';
+import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -26,8 +29,21 @@ import { Router } from '@angular/router';
     `,
   ],
 })
-export class HeaderComponent {
-  constructor(private router: Router) {}
+export class HeaderComponent implements OnInit, OnDestroy {
+  user: User | null = null;
+  private userSubscription!: Subscription;
+
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.userSubscription = this.authService.user.subscribe((user) => {
+      this.user = user;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription.unsubscribe();
+  }
 
   onNavigateToLogin = () => {
     this.router.navigate(['/auth']);

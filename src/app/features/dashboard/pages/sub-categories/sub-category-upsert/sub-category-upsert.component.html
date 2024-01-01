@@ -1,0 +1,38 @@
+<section class="mb-6">
+  <a [routerLink]="['../']" class="inline-flex item-center gap-1"
+    ><span class="text-sm material-symbols-outlined"> arrow_back_ios </span>
+    <span class="text-sm">Back to categories</span></a
+  >
+</section>
+<section class="mb-6">
+  <h2>{{ isEditMode() ? "Edit" : "Create" }} Category</h2>
+</section>
+<form autocomplete="off" class="flex-col gap-2" (ngSubmit)="onSubmit()">
+  <div class="input">
+    <label for="name">Name</label>
+    <div>
+      <input inputFocus #name type="text" id="name" />
+      <fieldset>
+        <legend><span>Name</span></legend>
+      </fieldset>
+    </div>
+  </div>
+  <!-- <small *ngIf="!name.value">Name is required</small> -->
+  <div class="input">
+    <label for="description">Description</label>
+    <div>
+      <input inputFocus #description type="text" id="description" />
+      <fieldset>
+        <legend><span>Description</span></legend>
+      </fieldset>
+    </div>
+  </div>
+  <!-- <small *ngIf="!description.value">Description is required</small> -->
+
+  <app-button
+    type="submit"
+    size="lg"
+    [expanded]="true"
+    [label]="isEditMode() ? 'Edit' : 'Save'"
+  ></app-button>
+</form>

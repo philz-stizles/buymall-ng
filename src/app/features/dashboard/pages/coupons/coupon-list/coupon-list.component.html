@@ -1,0 +1,46 @@
+<div class="flex-row justify-between mb-4">
+  <h2>Coupons</h2>
+  <app-button
+    size="lg"
+    label="Create New"
+    (click)="onNavigateToCreate()"
+  ></app-button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Discount</th>
+      <th>Expires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let coupon of coupons">
+      <td>{{ coupon.code }}</td>
+      <td>{{ coupon.description }}</td>
+      <td>{{ coupon.discount }}</td>
+      <td>{{ coupon.expiresOn }}</td>
+      <td class="flex-row gap-1">
+        <span
+          class="material-symbols-outlined"
+          (click)="onNavigateToDetails(coupon.id!)"
+        >
+          visibility
+        </span>
+        <span
+          class="material-symbols-outlined"
+          (click)="onNavigateToEdit(coupon.id!)"
+        >
+          edit
+        </span>
+        <span
+          class="material-symbols-outlined"
+          (click)="onDelete(coupon.id!)"
+        >
+          delete
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

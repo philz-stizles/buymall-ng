@@ -1,0 +1,231 @@
+<section class="header">
+  <div class="container">
+    <div class="page-info flex-row justify-between">
+      <h4 class="">Create a New Product</h4>
+
+      <div class="actions">
+        <app-button
+          size="lg"
+          [formGroup]="productForm"
+          [disabled]="productForm.invalid"
+          type="submit"
+          (onClick)="onSubmit()"
+          label="Create New"
+        >
+        </app-button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<form
+  id="productForm"
+  autocomplete="off"
+  class="flex-col gap-4"
+  [formGroup]="productForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="card flex-row gap-4">
+    <div class="input">
+      <label for="name">Product Name</label>
+      <div class="mb-2">
+        <input inputFocus id="name" formControlName="name" />
+        <fieldset>
+          <legend>
+            <span>Product Name</span>
+          </legend>
+        </fieldset>
+      </div>
+      <small
+        *ngIf="
+          productForm.get('name')?.invalid && productForm.get('name')?.dirty
+        "
+        >Name is required</small
+      >
+    </div>
+    <div class="input">
+      <label for="code">Product Code</label>
+      <div class="mb-2">
+        <input inputFocus id="code" formControlName="code" />
+        <fieldset>
+          <legend>
+            <span>Product Code</span>
+          </legend>
+        </fieldset>
+      </div>
+      <small
+        *ngIf="
+          productForm.get('code')?.invalid && productForm.get('code')?.dirty
+        "
+        >Code is required</small
+      >
+    </div>
+    <div class="input">
+      <label for="sku">Product SKU</label>
+      <div class="mb-2">
+        <input inputFocus id="sku" formControlName="sku" />
+        <fieldset>
+          <legend>
+            <span>Product SKU</span>
+          </legend>
+        </fieldset>
+      </div>
+      <small
+        *ngIf="productForm.get('sku')?.invalid && productForm.get('sku')?.dirty"
+        >Product SKU is required</small
+      >
+    </div>
+  </div>
+  <div class="card">
+    <div class="input">
+      <label for="description">Description</label>
+      <div class="mb-2">
+        <textarea
+          inputFocus
+          id="description"
+          formControlName="description"
+          rows="4"
+        ></textarea>
+        <fieldset>
+          <legend>
+            <span>Description</span>
+          </legend>
+        </fieldset>
+      </div>
+      <small
+        *ngIf="
+          productForm.get('description')?.invalid &&
+          productForm.get('description')?.dirty
+        "
+        >Description is required</small
+      >
+    </div>
+  </div>
+  <div class="card" formGroupName="price">
+    <div class="flex-row gap-4">
+      <div class="input">
+        <label for="regular">Regular Price</label>
+        <div class="mb-2">
+          <input
+            type="number"
+            inputFocus
+            id="regular"
+            formControlName="regular"
+          />
+          <fieldset>
+            <legend>
+              <span>Regular Price</span>
+            </legend>
+          </fieldset>
+        </div>
+        <small
+          *ngIf="
+            productForm.get('price.regular')?.invalid &&
+            productForm.get('price.regular')?.dirty
+          "
+          >Price is required</small
+        >
+      </div>
+      <div class="input">
+        <label for="sale">Sale Price</label>
+        <div class="mb-2">
+          <input type="number" inputFocus id="sale" formControlName="sale" />
+          <fieldset>
+            <legend>
+              <span>Sale Price</span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+      <div class="input">
+        <label for="tax">Tax (%)</label>
+        <div class="mb-2">
+          <input type="number" inputFocus id="tax" formControlName="tax" />
+          <fieldset>
+            <legend>
+              <span>Tax (%)</span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="flex-row gap-4">
+      <div class="input">
+        <label for="quantity">Quantity</label>
+        <div class="mb-2">
+          <input
+            type="number"
+            inputFocus
+            id="quantity"
+            formControlName="quantity"
+          />
+
+          <fieldset>
+            <legend>
+              <span>Quantity</span>
+            </legend>
+          </fieldset>
+        </div>
+        <small
+          *ngIf="
+            productForm.get('quantity')?.invalid &&
+            productForm.get('quantity')?.dirty
+          "
+          >Quantity is required</small
+        >
+      </div>
+      <div class="input">
+        <label for="category">Select a Category: </label>
+        <div class="mb-2">
+          <select inputFocus id="category" formControlName="category">
+            <option *ngFor="let category of categories" [value]="category.name">
+              {{ category.name }}
+            </option>
+          </select>
+          <fieldset>
+            <legend>
+              <span>Select a Category:</span>
+            </legend>
+          </fieldset>
+        </div>
+        <small
+          *ngIf="
+            productForm.get('category')?.invalid &&
+            productForm.get('category')?.dirty
+          "
+          >Category is required</small
+        >
+      </div>
+      <div class="input">
+        <label for="subcategory">Select a Subcategory: </label>
+        <div class="mb-2">
+          <select inputFocus id="subcategory" formControlName="subcategory">
+            <option *ngFor="let category of categories" [value]="category.name">
+              {{ category.name }}
+            </option>
+          </select>
+          <fieldset>
+            <legend>
+              <span>Select a Subcategory:</span>
+            </legend>
+          </fieldset>
+        </div>
+        <small
+          *ngIf="
+            productForm.get('subcategory')?.invalid &&
+            productForm.get('subcategory')?.dirty
+          "
+          >Subcategory is required</small
+        >
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="flex-row gap-4">
+      <input id="isPublished" type="checkbox" formControlName="isPublished" />
+      <label for="isPublished">Is published</label>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,146 @@
+<aside>
+  <button class="menu-button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+  <div class="content">
+    <div class="p-5"><app-logo></app-logo></div>
+    <div>
+      <nav>
+        <div class="menu">
+          <h3>Overview</h3>
+          <ul class="">
+            <li class="menu-item">
+              <a
+                routerLink="/dashboard"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    dashboard
+                  </span></span
+                >
+                <span class="menu-item__label">Overview</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="categories" routerLinkActive="active-link">
+                <span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    category
+                  </span></span
+                >
+                <span class="menu-item__label">Categories</span></a
+              >
+            </li>
+            <!-- <app-menu-item label="Products" icon="local_mall"></app-menu-item> -->
+            <li class="menu-item">
+              <a routerLink="products" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+
+                  </span></span
+                ><span class="menu-item__label">Products</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="colors" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    format_color_fill
+                  </span></span
+                ><span class="menu-item__label">Colors</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="sizes" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined"> resize </span></span
+                ><span class="menu-item__label">Sizes</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="coupons" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    shoppingmode
+                  </span></span
+                ><span>Coupons</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="menu">
+          <h3>Business</h3>
+          <ul>
+            <li class="menu-item">
+              <a routerLink="orders" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    trolley
+                  </span></span
+                >
+                <span class="menu-item__label">Orders</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="transactions" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    payments
+                  </span></span
+                >
+                <span class="menu-item__label">Transactions</span></a
+              >
+            </li>
+
+            <li class="menu-item">
+              <a routerLink="invoices" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    receipt_long
+                  </span></span
+                >
+                <span class="menu-item__label">Invoices</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="menu">
+          <h3>Overview</h3>
+          <ul>
+            <li class="menu-item">
+              <a routerLink="users" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><mat-icon
+                    aria-hidden="false"
+                    aria-label="Users icon"
+                    fontIcon="people_outlined"
+                  ></mat-icon
+                ></span>
+                <span class="menu-item__label">Users</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="settings" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined">
+                    settings
+                  </span></span
+                >
+                <span class="menu-item__label">Settings</span></a
+              >
+            </li>
+            <li class="menu-item">
+              <a routerLink="help-center" routerLinkActive="active-link"
+                ><span class="menu-item__icon"
+                  ><span class="material-symbols-outlined"> help </span></span
+                >
+                <span class="menu-item__label">Help Center</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</aside>

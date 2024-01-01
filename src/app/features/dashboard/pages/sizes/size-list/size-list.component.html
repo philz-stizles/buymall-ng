@@ -1,0 +1,42 @@
+<div class="flex-row justify-between mb-4">
+  <h2>Coupons</h2>
+  <app-button
+    size="lg"
+    label="Create New"
+    (click)="onNavigateToCreate()"
+  ></app-button>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let size of sizes">
+      <td>{{ size.value }}</td>
+      <td>{{ size.description }}</td>
+
+
+      <td class="flex-row gap-1">
+        <span
+          class="material-symbols-outlined"
+          (click)="onNavigateToDetails(size.id!)"
+        >
+          visibility
+        </span>
+        <span
+          class="material-symbols-outlined"
+          (click)="onNavigateToEdit(size.id!)"
+        >
+          edit
+        </span>
+        <span class="material-symbols-outlined" (click)="onDelete(size.id!)">
+          delete
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

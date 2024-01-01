@@ -1,0 +1,119 @@
+<section class="mb-6">
+  <a [routerLink]="['../..']" class="inline-flex item-center gap-4"
+    ><span class="text-sm material-symbols-outlined"> arrow_back_ios </span>
+    <span class="text-sm">Back to coupons</span></a
+  >
+</section>
+<section class="mb-6">
+  <h2>{{ isEditMode() ? "Edit" : "Create" }} Coupon</h2>
+</section>
+<form
+  #couponForm="ngForm"
+  autocomplete="off"
+  class="flex-col gap-4"
+  (ngSubmit)="onSubmit(couponForm)"
+>
+  <div class="input">
+    <label for="code">Code</label>
+    <div>
+      <input
+        inputFocus
+        type="text"
+        id="code"
+        ngModel
+        name="code"
+        #code="ngModel"
+        required
+      />
+      <fieldset>
+        <legend><span>Code</span></legend>
+      </fieldset>
+    </div>
+    <small class="input-error" *ngIf="!code.valid && code.dirty"
+      >Code is required</small
+    >
+  </div>
+
+  <div class="input">
+    <label for="description">Description</label>
+    <div>
+      <input
+        inputFocus
+        type="text"
+        id="description"
+        ngModel
+        name="description"
+        #description="ngModel"
+        required
+      />
+      <fieldset>
+        <legend><span>Description</span></legend>
+      </fieldset>
+    </div>
+    <small class="input-error" *ngIf="description.invalid && description.dirty"
+      >Description is required</small
+    >
+  </div>
+
+  <div class="flex-row gap-4">
+    <div class="input">
+      <label for="discount">Discount</label>
+      <div>
+        <input
+          inputFocus
+          type="number"
+          id="discount"
+          min="1"
+          max="100"
+          ngModel
+          name="discount"
+          #discount="ngModel"
+          required
+        />
+        <fieldset>
+          <legend><span>Discount</span></legend>
+        </fieldset>
+      </div>
+      <ng-container *ngIf="!discount.valid && discount.dirty"
+        ><small class="input-error"
+          ><small class="absolute" *ngIf="discount.errors?.['required']"
+            >Discount is required</small
+          ><small *ngIf="discount.errors?.['min']"
+            >Discount must be from 1 to 100 percent</small
+          ><small *ngIf="discount.errors?.['max']"
+            >Discount must be from 1 to 100 percent</small
+          ></small
+        ></ng-container
+      >
+    </div>
+    <div class="input">
+      <label for="expiresOn">Expires On</label>
+      <div>
+        <input
+          inputFocus
+          type="date"
+          id="expiresOn"
+          ngModel
+          name="expiresOn"
+          #expiresOn="ngModel"
+          required
+        />
+        <fieldset>
+          <legend><span>Expires On</span></legend>
+        </fieldset>
+      </div>
+      <ng-container *ngIf="!expiresOn.valid && expiresOn.dirty"
+        ><small class="input-error" *ngIf="expiresOn.errors?.['required']"
+          >Expiry date is required</small
+        ></ng-container
+      >
+    </div>
+  </div>
+
+  <app-button
+    size="lg"
+    [disabled]="!couponForm.valid || couponForm.form.pristine"
+    [expanded]="true"
+    [label]="isEditMode() ? 'Edit' : 'Save'"
+  ></app-button>
+</form>

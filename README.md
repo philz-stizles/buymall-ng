@@ -2,13 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
+## Table of Contents
+
+1. Deployment Steps
+2. [Deployment to Firebase Hosting](#deploy-to-firebase-hosting)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component|directive|pipe|service|class|guard|interface|enum|module name`.
 
 ## Build
 
@@ -22,11 +27,36 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### Random ID generation using uuid
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[uuid](https://www.npmjs.com/package/uuid)
 
-## Deploy to Firebase
+### Date formatting using moment
 
-  ng add @angular/fire
-  ng deploy
+[moment](https://www.npmjs.com/package/moment)
+
+### Notifications using ngx-toastr
+
+[ngx-toastr](https://www.npmjs.com/package/ngx-toastr)
+
+### File upload using ng2-file-upload
+
+[ng2-file-upload](https://www.npmjs.com/package/ng2-file-upload)
+
+### Data Visualization using Chartjs
+
+[ng2-charts](https://www.npmjs.com/package/ng2-charts)
+[angular2-chartjs](https://www.npmjs.com/package/angular2-chartjs)
+
+### Deployment Steps
+
+Use and check environment variables
+Polish and optimize application
+Test application code - manual, unit tests & e2e tests
+ng build --prod - This will using Ahead-of-Time Compilation(AOT)
+Deploy build artifacts(generated files) to static host - Firebase hosting, AWS, etc
+
+### Deploy to Firebase Hosting
+
+ng add @angular/fire
+ng deploy

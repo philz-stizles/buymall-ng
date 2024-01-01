@@ -5,27 +5,35 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/public/public.module').then(
+      import('./features/public/public.module').then(
         (module) => module.PublicModule
       ),
   },
   {
     path: 'auth',
     loadChildren: () =>
-      import('./modules/auth/auth.module').then((module) => module.AuthModule),
+      import('./features/auth/auth.module').then((module) => module.AuthModule),
   },
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('./modules/dashboard/dashboard.module').then(
+      import('./features/dashboard/dashboard.module').then(
         (module) => module.DashboardModule
       ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    // pathMatch: 'full'
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      // useHash: true, false by default
+    }),
   ],
   exports: [RouterModule],
 })

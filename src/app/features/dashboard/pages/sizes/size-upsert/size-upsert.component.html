@@ -1,0 +1,42 @@
+<section class="mb-6">
+  <a [routerLink]="['../..']" class="inline-flex item-center gap-4"
+    ><span class="text-sm material-symbols-outlined"> arrow_back_ios </span>
+    <span class="text-sm">Back to sizes</span></a
+  >
+</section>
+<section class="mb-6">
+  <h2>{{ isEditMode() ? "Edit" : "Create" }} Size</h2>
+</section>
+<form autocomplete="off" class="flex-col gap-4" (ngSubmit)="onSubmit()">
+  <div class="input">
+    <label for="value">Value</label>
+    <div>
+      <input inputFocus type="text" id="value" #value required />
+      <fieldset>
+        <legend><span>Value</span></legend>
+      </fieldset>
+    </div>
+    <!-- <small class="input-error" *ngIf="!value.value"
+      >Value is required</small
+    > -->
+  </div>
+
+  <div class="input">
+    <label for="description">Description</label>
+    <div>
+      <input inputFocus type="text" id="description" #description required />
+      <fieldset>
+        <legend><span>Description</span></legend>
+      </fieldset>
+    </div>
+    <!-- <small class="input-error" *ngIf="description.invalid && description.dirty"
+      >Description is required</small
+    > -->
+  </div>
+
+  <app-button
+    size="lg"
+    [expanded]="true"
+    [label]="isEditMode() ? 'Edit' : 'Save'"
+  ></app-button>
+</form>

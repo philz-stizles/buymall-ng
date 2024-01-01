@@ -1,6 +1,5 @@
 import CryptoJS from 'crypto-js';
 import { environment } from '../../../environments/environment';
-import { Injectable } from '@angular/core';
 
 export class LocalStorageService {
   private encryptionKey = environment.encryptionKey;

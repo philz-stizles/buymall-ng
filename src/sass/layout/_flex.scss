@@ -1,9 +1,13 @@
 .flex {
   display: flex;
+}
 
-  &.wrap {
-    flex-wrap: wrap;
-  }
+.inline-flex {
+  display: inline-flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .flex-row {
